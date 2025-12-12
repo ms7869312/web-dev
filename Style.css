@@ -1,0 +1,211 @@
+{ box-sizing: border-box; }
+
+:root {
+    --bg: #f5f5f512;
+    --text: #222;
+    --white: #fff;
+    --border: #ddd;
+    --dark: #222;
+    --dark-hover: #444;
+    --light-hover: #e0e0e0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main { flex-grow: 1; }
+
+/* Typography */
+h1, h2, h3 { margin-top: 0; }
+h1, p, hr {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+h1 { padding: 20px 0 10px; }
+p { padding-bottom: 15px; }
+
+/* Smooth transitions */
+a, button, .hover-btn {
+    transition: background-color .3s, opacity .3s;
+}
+
+/* ================= Top Bar & Footer ================= */
+.nav, footer {
+    background: var(--dark);
+    color: var(--white);
+    padding: 15px 20px;
+    text-align: center;
+}
+.nav { font-size: 24px; font-weight: bold; }
+footer { margin-top: auto; }
+
+/* ================= Header & Navigation ================= */
+header {
+    background: var(--white);
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+nav ul li {
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 12px;
+    display: block;
+    border-radius: 4px;
+}
+nav ul li a:hover { background: var(--light-hover); }
+
+/* Mobile Navigation */
+@media (max-width: 600px) {
+    nav ul { flex-direction: column; }
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 8px;
+        width: 100%;
+    }
+    nav ul li a { text-align: center; }
+}
+
+/* ================= Page & Form Wrappers ================= */
+.page, .form-wrapper {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 30px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    border-radius: 6px;
+}
+
+/* Login*/
+.form-wrapper {
+    max-width: 450px;
+    margin: 40px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,.1);
+}
+
+/* ================= Home Section ================= */
+#Home {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+#Home div {
+    flex-basis: 55%;
+    padding-right: 20px;
+}
+
+#photgraphy {
+    flex-basis: 40%;
+    text-align: right;
+}
+#photgraphy img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+}
+
+#Home h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+#Home a {
+    padding: 10px 18px;
+    background: var(--dark);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+}
+#Home a:hover { background: var(--dark-hover); }
+
+/* Home - Mobile */
+@media (max-width: 768px) {
+    #Home { flex-direction: column; padding: 20px; }
+    #Home div, #photgraphy {
+        flex-basis: 100%;
+        padding-right: 0;
+        text-align: center;
+    }
+    #Home div { order: 2; }
+    #photgraphy { order: 1; margin-bottom: 20px; }
+}
+
+/* ================= Cards ================= */
+.cards { margin-top: 15px; }
+
+.card, .hover-card {
+    background: #fafafa;
+    border: 1px solid var(--border);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+.hover-card:hover { background: #f0f0f0; }
+
+/* ================= Input Fields ================= */
+.field input, #Contact input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 8px 0;
+}
+#Contact input { max-width: 400px; }
+
+/* Labels */
+.field label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.row { margin-bottom: 15px; }
+
+/* ================= Buttons ================= */
+button, .hover-btn, .submit-btn {
+    padding: 10px 20px;
+    border: none;
+    background: var(--dark);
+    color: var(--white);
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0;
+}
+
+/* Default <button> override */
+button:not(.hover-btn):not(.submit-btn) {
+    padding: 8px 15px;
+    margin: 4px 6px 4px 0;
+    border: 1px solid #ccc;
+    background: var(--white);
+    color: var(--dark);
+}
+
+button:hover { background: #f0f0f0; }
+.hover-btn:hover, .submit-btn:hover {
+    background: var(--dark-hover);
+}

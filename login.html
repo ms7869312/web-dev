@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="nav">PhotoPLUS</div>
+
+<header>
+    <nav> 
+        <ul>
+            <li><a href="Profile.html">Home</a></li>
+            <li><a href="Genre.html">Genre</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="Login.html">Login</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h1 style="padding:20px;">Become our member</h1>
+
+
+<div class="form-wrapper">
+    <h2>Login</h2>
+
+    <form onsubmit="return validatelogin()">
+        <div class="row">
+            <div class="field">
+                <label>Username</label>
+                <input id="loginUsername" type="text" placeholder="Enter Your Username">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field">
+                <label>Password</label>
+                <input id="loginPassword" type="password" placeholder="Enter Your Password">
+            </div>
+        </div>
+
+        <input class="submit-btn" type="submit" value="Submit">
+    </form>
+</div>
+
+<script src="login.js"></script>
+
+</body>
+</html>
